@@ -6,4 +6,36 @@ html {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+#header-title > p{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#header-nav {
+    max-width: 66vw;
+}
+
+#header-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-nav-list-items {
+    padding: 0 1.25rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.header-nav-list-items:last-of-type {
+    padding-right: 0;
 }
