@@ -1,8 +1,13 @@
+:root {
+    --main-gray: #595959;
+}
+
 html {
     font-size: 10px;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -10,10 +15,17 @@ html {
     list-style: none;
 }
 
+#header-container {
+    position: relative;
+}
+
 header {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 3rem;
+    background-color: rgba(89, 89, 89, .4);
 }
 
 #header-title > p{
@@ -22,7 +34,8 @@ header {
 }
 
 #header-nav {
-    max-width: 66vw;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #header-nav-list {
@@ -38,4 +51,12 @@ header {
 
 .header-nav-list-items:last-of-type {
     padding-right: 0;
+}
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: center;
+    background-color: blue;
 }
