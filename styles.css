@@ -1,5 +1,6 @@
 :root {
     --main-gray: #595959;
+    --main-white: #FFFFFB;
 }
 
 html {
@@ -10,9 +11,12 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    text-decoration: none;
+    font-family: 'Open Sans';
     list-style: none;
+}
+
+.c-white {
+    color: var(--main-white);
 }
 
 #header-container {
@@ -23,8 +27,8 @@ header {
     position: fixed;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 3rem;
+    justify-content: space-evenly;
+    padding: 5rem 5rem 3rem 5rem;
     background-color: rgba(89, 89, 89, .4);
 }
 
@@ -35,7 +39,7 @@ header {
 
 #header-nav {
     display: flex;
-    justify-content: flex-end;
+    font-weight: 600;
 }
 
 #header-nav-list {
@@ -47,6 +51,11 @@ header {
     padding: 0 1.25rem;
     font-size: 1.5rem;
     text-transform: uppercase;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
 }
 
 .header-nav-list-items:last-of-type {
@@ -57,6 +66,18 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: center;
-    background-color: blue;
+    background-color: #C8DBBE;
+    height: 50vh;
 }
+
+#welcome-section-container > h1 {
+    font-size: 6rem;
+    font-weight: 900;
+}
+
+#welcome-section-container > p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+
