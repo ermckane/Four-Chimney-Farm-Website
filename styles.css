@@ -1,6 +1,12 @@
 :root {
     --main-gray: #595959;
     --main-white: #FFFFFB;
+    --main-green: #4E6C50;
+    --main-brown: #AA8B56;
+    --main-accent: #E5D9B6;
+    --main-red: #A25B5B;
+    --main-tan: #F9F6F2;
+    --main-yellow: #F7DDA4;
 }
 
 html {
@@ -15,8 +21,12 @@ html {
     list-style: none;
 }
 
+body {
+    background-color: var(--main-tan);
+}
+
 .c-white {
-    color: var(--main-white);
+    color: var(--main-tan);
 }
 
 #header-container {
@@ -28,8 +38,8 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    padding: 5rem 5rem 3rem 5rem;
-    background-color: rgba(89, 89, 89, .4);
+    padding: 4rem 5rem 4rem 5rem;
+    z-index: 1;
 }
 
 #header-title > p{
@@ -58,6 +68,10 @@ a {
     text-decoration: none;
 }
 
+.links:hover {
+    color: var(--main-red);
+}
+
 .header-nav-list-items:last-of-type {
     padding-right: 0;
 }
@@ -65,19 +79,39 @@ a {
 #welcome-section {
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #C8DBBE;
-    height: 50vh;
+    background-image: url('./photos/main-page-welcome-photo.jpg');
+    background-color: rgba(89, 89, 89, .4);
+    background-size: cover;
+    background-repeat: none;
+    height: 60vh;
+    min-width: 300px;
+    max-width: 150rem;
+    margin: auto;
 }
 
-#welcome-section-container > h1 {
+#welcome-section-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    position: absolute;
+}
+
+#welcome-section-text-container > h1 {
+    position: relative;
     font-size: 6rem;
     font-weight: 900;
+    top: 30%;
 }
 
-#welcome-section-container > p {
+#welcome-section-text-container > p {
+    position: relative;
+    top: 30%;
     font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .05rem;
     text-align: center;
+    color: var(--main-yellow);
+    
 }
+
 
 
