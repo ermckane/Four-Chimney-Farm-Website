@@ -1,13 +1,15 @@
 :root {
-    --main-gray: #595959;
+    --main-black: #242424;
+    --main-grey: #595959;
+    --main-light-grey: #CFCFCF;
+    --main-lightest-grey: #F0F0F0;
     --main-white: #FFFFFB;
     --main-green: #4E6C50;
     --main-brown: #AA8B56;
-    --main-accent: #E5D9B6;
     --main-red: #A25B5B;
+    --main-dark-red: #693B3B;
     --main-tan: #FDF7E3;
     --main-yellow: #F7DDA4;
-    --main-light-grey: ##F0F0F0;
 }
 
 html {
@@ -23,11 +25,15 @@ html {
 }
 
 body {
-    background-color: var(--main-light-grey);
+    background-color: var(--main-lightest-grey);
 }
 
 .c-white {
     color: var(--main-white);
+}
+
+.c-black {
+    color: var(--main-black);
 }
 
 #header-container {
@@ -39,17 +45,24 @@ header {
     position: fixed;
     display: flex;
     justify-content: space-evenly;
-    background-color: rgba(0, 0, 0, .35);
+    background-color: rgba(0, 0, 0, .4);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     height: 10rem;
     width: 100%;
     max-width: 150rem;
-    left: 0;
-    right: 0;
-    padding: 3.5rem 0;
     margin: 0 auto;
-    border-bottom: 1px solid var(--main-white);
-    z-index: 1;
 }
+
+header:after {
+    content : "";
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    width: 75%;  
+    border-bottom: 1px solid var(--main-white);
+  }
 
 #header-title {
     margin: auto 0;
@@ -62,7 +75,6 @@ header {
 
 #header-nav {
     margin: auto 0;
-    font-weight: 600;
 }
 
 #header-nav-list {
@@ -71,8 +83,9 @@ header {
 }
 
 .header-nav-list-items {
-    padding: 0 1.25rem;
+    padding: 2rem 1.25rem;
     font-size: 1.5rem;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -80,12 +93,12 @@ a {
     text-decoration: none;
 }
 
-.links:hover {
-    color: var(--main-red);
+.header-nav-list-items:hover {
+    background-color: var(--main-red);
 }
 
-.header-nav-list-items:last-of-type {
-    padding-right: 0;
+.header-nav-list-items:active {
+    background-color: var(--main-dark-red);
 }
 
 #welcome-section {
@@ -102,38 +115,33 @@ a {
     margin: auto;
 }
 
-#welcome-section-overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    position: absolute;
+#welcome-section-text-container {
+    margin-top: 27rem;
 }
 
 #welcome-section-text-container > h1 {
-    position: relative;
     font-size: 6rem;
     font-weight: 900;
-    top: 30%;
     text-align: center;
     padding: 0 1rem;
+    line-height: 6rem;
+
 }
 
 #welcome-section-text-container > p {
-    position: relative;
-    top: 30%;
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: .05rem;
     text-align: center;
+    margin-top: 2rem;
     color: var(--main-yellow);
-    
 }
 
 #hamburger-icon {
-    position: absolute;
-    visibility: hidden;
+    display: none;
+    margin: auto 0;
     width: 3rem;
     height: 3rem;
-    display: block;
     background: linear-gradient(
       to bottom, 
       var(--main-white), var(--main-white) 20%, 
@@ -144,17 +152,31 @@ a {
     );
 }
 
-#hamburger-icon #hamburger-nav {
-    visibility: hidden;
+#hamburger-nav {
+    display: none;
     position: fixed;
     top: 10rem;
     right: -70rem;
     width: 100%;
-    height: 10rem;
-    background-color: var(--main-yellow);
-    padding: 0px 10px;
-    transition: 0.3s;
+    background-color: var(--main-lightest-grey);
+    transition: 0.35s ease-out;
     border-radius: 0 0 .25rem .25rem;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+}
+
+#hamburger-nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.hamburger-nav-list-items {
+    border-bottom: .1rem solid var(--main-light-grey);
+}
+
+.hamburger-nav-list-items:last-of-type {
+    border-bottom: none;
 }
 
 #hamburger-input{
@@ -166,6 +188,25 @@ a {
 #hamburger-input:checked + #hamburger-icon #hamburger-nav {
     visibility: visible;
     right: 0;
+}
+
+#hamburger-input:checked ~ .overlay{
+    visibility: visible;
+    opacity: 0.4;
+ }
+
+ .overlay{
+    display: none;
+    position: fixed;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
 }
 
 @media (max-width: 700px) {
@@ -181,11 +222,20 @@ a {
     }
 
     #hamburger-icon {
-        position: static;
-        visibility: visible;
+        display: block;
     }
 
     #hamburger-nav {
-        visibility: visible;
+        display: block;
+        text-align: center;
+    }
+
+    header:after {
+        width: 100%;
+        left: 0;
+    }
+
+    .overlay {
+        display: block;
     }
 }
