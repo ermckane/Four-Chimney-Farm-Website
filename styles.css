@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    background-color: var(--main-lightest-grey);
+    background-color: var(--main-tan);
 }
 
 .c-white {
@@ -36,9 +36,11 @@ body {
     color: var(--main-black);
 }
 
-#header-container {
+.section-details {
+    min-width: 30rem;
+    max-width: 150rem;
+    margin: 0 auto;
     position: relative;
-    margin: auto;
 }
 
 header {
@@ -51,6 +53,7 @@ header {
     padding: 0 4rem;
     height: 10rem;
     width: 100%;
+    min-width: 30rem;
     max-width: 150rem;
     margin: 0 auto;
 }
@@ -70,7 +73,7 @@ header {
     margin: auto 0;
 }
 
-#header-title > p{
+#home-link{
     font-size: 2rem;
     font-weight: 700;
 }
@@ -105,6 +108,7 @@ a {
 
 #welcome-section {
     display: flex;
+    position: static;
     justify-content: center;
     background-image: url('./photos/main-page-welcome-photo_1.jpg');
     background-color: rgba(89, 89, 89, .4);
@@ -112,8 +116,6 @@ a {
     background-size: 150rem;
     background-repeat: none;
     height: 70vh;
-    min-width: 300px;
-    max-width: 150rem;
     margin: auto;
 }
 
@@ -162,7 +164,7 @@ a {
     width: 100%;
     background-color: var(--main-lightest-grey);
     transition: 0.35s ease-out;
-    border-radius: 0 0 .25rem .25rem;
+    border-radius: .5rem 0 0 .5rem;
     box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
 }
 
@@ -210,6 +212,12 @@ a {
     background: black;
     z-index: -1;
 }
+
+#meet-us-section {
+    height: 50rem;
+    background-color: var(--main-lightest-grey);
+}
+
 
 @media (max-width: 750px) {
 
