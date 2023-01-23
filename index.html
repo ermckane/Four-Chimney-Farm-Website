@@ -10,12 +10,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="./main.js" defer>
+        </script>
     </head>
     <body>
         <section class='section-details' id="header-container">
             <header>
                 <div id="header-title">
-                    <a class='links' id='home-link'><p class="c-white">Four Chimney Farm</p></a>
+                    <a class='links c-white' id='home-link' href="./index.html">Four Chimney Farm</a>
                 </div>
                 <nav id="header-nav">
                     <ul id="header-nav-list">
@@ -52,8 +54,8 @@
                         </ul>
                     </nav>
                 </label>
-                <div class="overlay"></div> 
-                <div id="header-border"></div>
+                <div class="overlay"></div>
+                <div id="header-border"></div> 
             </header>         
         </section>
         <section class='section-details' id="welcome-section">
@@ -63,8 +65,27 @@
             </div>
         </section>
         <section class='section-details' id="meet-us-section">
-            
+        
         </section>
+        <button class="header-nav-button" aria-controls="primary-navigation" aria-expanded="false">
+            <svg fill='var(--main-black)' class="hamburger" viewbox="0 0 100 100" width="40">
+                <rect class="line top"  
+                      width="70" 
+                      height="10"
+                      x="15" y="25" rx="5">
+                </rect>
+                <rect class="line middle"  
+                      width="70" 
+                      height="10"
+                      x="15" y="45" rx="5">
+                </rect>
+                <rect class="line bottom"  
+                      width="70" 
+                      height="10"
+                      x="15" y="65" rx="5">
+                </rect>
+            </svg>
+        </button>
     </body>
 </html>
 

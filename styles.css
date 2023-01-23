@@ -71,6 +71,7 @@ header {
 
 #header-title {
     margin: auto 0;
+    padding: 2rem 1.25rem;
 }
 
 #home-link{
@@ -98,9 +99,12 @@ a {
     text-decoration: none;
 }
 
-.header-nav-list-items:hover {
+.header-nav-list-items:hover,
+#header-title:hover {
     background-color: var(--main-red);
 }
+
+.header
 
 .header-nav-list-items:active {
     background-color: var(--main-dark-red);
@@ -140,6 +144,46 @@ a {
     margin-top: 2rem;
     color: var(--main-yellow);
 }
+
+.header-nav-button {
+    background: transparent;
+    border: .2rem solid transparent;
+    border-radius: .5rem;
+}
+
+.header-nav-button .line {
+    transition: 
+        y 300ms ease-in 300ms,
+        rotate 300ms ease-in,
+        opacity 0ms 300ms;
+    ;
+    transform-origin: center;
+}
+
+.header-nav-button[aria-expanded='true'] .line {
+    transition: 
+        y 300ms ease-in,
+        rotate 300ms ease-in 300ms,
+        opacity 0ms 300ms;
+    ;
+}
+
+.header-nav-button[aria-expanded='true'] :is(.top, .bottom) {
+    y: 45px;
+}
+
+.header-nav-button[aria-expanded='true'] .top {
+    rotate: 45deg;
+}
+
+.header-nav-button[aria-expanded='true'] .bottom {
+    rotate: -45deg;
+}
+
+.header-nav-button[aria-expanded='true'] .middle {
+    opacity: 0;
+}
+
 
 #hamburger-icon {
     display: none;
