@@ -105,11 +105,96 @@ a {
     background-color: var(--main-red);
 }
 
-.header
-
 .header-nav-list-items:active {
     background-color: var(--main-dark-red);
 }
+
+.header-nav-button {
+    display: none;
+    background: transparent;
+    border: .2rem solid transparent;
+    border-radius: .5rem;
+    vertical-align: center;
+}
+
+.header-nav-button .line {
+    transition: 
+        y 300ms ease-in 300ms,
+        rotate 300ms ease-in,
+        opacity 0ms 300ms;
+    ;
+    transform-origin: center;
+}
+
+.header-nav-button[aria-expanded='true'] .line {
+    transition: 
+        y 300ms ease-in,
+        rotate 300ms ease-in 300ms,
+        opacity 0ms 300ms;
+    ;
+}
+
+.header-nav-button[aria-expanded='true'] :is(.top, .bottom) {
+    y: 45px;
+}
+
+.header-nav-button[aria-expanded='true'] .top {
+    rotate: 45deg;
+}
+
+.header-nav-button[aria-expanded='true'] .bottom {
+    rotate: -45deg;
+}
+
+.header-nav-button[aria-expanded='true'] .middle {
+    opacity: 0;
+}
+
+#hamburger-nav {
+    display: none;
+    position: fixed;
+    top: 10rem;
+    right: -75rem;
+    width: 100%;
+    background-color: var(--main-lightest-grey);
+    transition: 0.35s ease-out;
+    border-radius: .5rem 0 0 .5rem;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+}
+
+#hamburger-nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.hamburger-nav-list-items {
+    border-bottom: .1rem solid var(--main-light-grey);
+}
+
+.hamburger-nav-list-items:last-of-type {
+    border-bottom: none;
+}
+
+.header-nav-button[aria-expanded='true'] #hamburger-nav {
+    right: 0;
+}
+
+
+ .overlay{
+    position: fixed;
+    top: 10rem;
+    left: -80rem;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
 
 #welcome-section {
     display: flex;
@@ -153,118 +238,6 @@ a {
     color: var(--main-yellow);
 }
 
-.header-nav-button {
-    background: transparent;
-    border: .2rem solid transparent;
-    border-radius: .5rem;
-}
-
-.header-nav-button .line {
-    transition: 
-        y 300ms ease-in 300ms,
-        rotate 300ms ease-in,
-        opacity 0ms 300ms;
-    ;
-    transform-origin: center;
-}
-
-.header-nav-button[aria-expanded='true'] .line {
-    transition: 
-        y 300ms ease-in,
-        rotate 300ms ease-in 300ms,
-        opacity 0ms 300ms;
-    ;
-}
-
-.header-nav-button[aria-expanded='true'] :is(.top, .bottom) {
-    y: 45px;
-}
-
-.header-nav-button[aria-expanded='true'] .top {
-    rotate: 45deg;
-}
-
-.header-nav-button[aria-expanded='true'] .bottom {
-    rotate: -45deg;
-}
-
-.header-nav-button[aria-expanded='true'] .middle {
-    opacity: 0;
-}
-
-
-#hamburger-icon {
-    display: none;
-    margin: auto 0;
-    width: 3rem;
-    height: 3rem;
-    background: linear-gradient(
-      to bottom, 
-      var(--main-white), var(--main-white) 20%, 
-      rgba(0,0,0,0) 20%, rgba(0,0,0,0) 40%, 
-      var(--main-white) 40%, var(--main-white) 60%, 
-      rgba(0,0,0,0) 60%, rgba(0,0,0,0) 80%, 
-      var(--main-white) 80%, var(--main-white) 100%
-    );
-}
-
-#hamburger-nav {
-    display: none;
-    position: fixed;
-    top: 10rem;
-    right: -75rem;
-    width: 100%;
-    background-color: var(--main-lightest-grey);
-    transition: 0.35s ease-out;
-    border-radius: .5rem 0 0 .5rem;
-    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
-}
-
-#hamburger-nav-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-}
-
-.hamburger-nav-list-items {
-    border-bottom: .1rem solid var(--main-light-grey);
-}
-
-.hamburger-nav-list-items:last-of-type {
-    border-bottom: none;
-}
-
-#hamburger-input{
-    position: absolute;
-    right: -25rem;
-    display: hidden;
-  }
-
-#hamburger-input:checked + #hamburger-icon #hamburger-nav {
-    visibility: visible;
-    right: 0;
-}
-
-#hamburger-input:checked ~ .overlay{
-    visibility: visible;
-    left: 0;
-    opacity: 0.4;
- }
-
- .overlay{
-    position: fixed;
-    top: 10rem;
-    left: -80rem;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity .35s, visibility .35s, height .35s;
-    overflow: hidden;
-    background: black;
-    z-index: -1;
-}
-
 #meet-us-section {
     height: 50rem;
     background-color: var(--main-lightest-grey);
@@ -283,7 +256,7 @@ a {
         display: none;
     }
 
-    #hamburger-icon {
+    .header-nav-button {
         display: block;
     }
 

@@ -35,25 +35,41 @@
                         </li>
                     </ul>
                 </nav>
-                <input type="checkbox" id="hamburger-input" class="burger-shower" />
-                <label id="hamburger-icon" for="hamburger-input">
-                    <nav id="hamburger-nav">
-                        <ul id="hamburger-nav-list">
-                            <li class="header-nav-list-items hamburger-nav-list-items">
-                                <a class='links c-black' href="./aboutUs.html">About Us</a>
-                            </li>
-                            <li class="header-nav-list-items hamburger-nav-list-items">
-                                <a class='links c-black' href="./theFarm.html">The Farm</a>
-                            </li>
-                            <li class="header-nav-list-items hamburger-nav-list-items">
-                                <a class='links c-black' href="./theAnimals.html">The Animals</a>
-                            </li>
-                            <li class="header-nav-list-items hamburger-nav-list-items">
-                                <a class='links c-black' href="./contact.html">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </label>
+                <button class="header-nav-button" aria-controls="primary-navigation" aria-expanded="false">
+                    <svg fill='var(--main-white)' class="hamburger" viewbox="0 0 100 100" width="35">
+                        <rect class="line top"  
+                            width="70" 
+                            height="10"
+                            x="15" y="25" rx="5">
+                        </rect>
+                        <rect class="line middle"  
+                            width="70" 
+                            height="10"
+                            x="15" y="45" rx="5">
+                        </rect>
+                        <rect class="line bottom"  
+                            width="70" 
+                            height="10"
+                            x="15" y="65" rx="5">
+                        </rect>
+                    </svg>
+                </button>
+                <nav id="hamburger-nav">
+                    <ul id="hamburger-nav-list">
+                        <li class="header-nav-list-items hamburger-nav-list-items">
+                            <a class='links c-black' href="./aboutUs.html">About Us</a>
+                        </li>
+                        <li class="header-nav-list-items hamburger-nav-list-items">
+                            <a class='links c-black' href="./theFarm.html">The Farm</a>
+                        </li>
+                        <li class="header-nav-list-items hamburger-nav-list-items">
+                            <a class='links c-black' href="./theAnimals.html">The Animals</a>
+                        </li>
+                        <li class="header-nav-list-items hamburger-nav-list-items">
+                            <a class='links c-black' href="./contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
                 <div class="overlay"></div>
                 <div id="header-border"></div> 
             </header>         
@@ -71,25 +87,7 @@
         <section class='section-details' id="meet-us-section">
         
         </section>
-        <button class="header-nav-button" aria-controls="primary-navigation" aria-expanded="false">
-            <svg fill='var(--main-black)' class="hamburger" viewbox="0 0 100 100" width="40">
-                <rect class="line top"  
-                      width="70" 
-                      height="10"
-                      x="15" y="25" rx="5">
-                </rect>
-                <rect class="line middle"  
-                      width="70" 
-                      height="10"
-                      x="15" y="45" rx="5">
-                </rect>
-                <rect class="line bottom"  
-                      width="70" 
-                      height="10"
-                      x="15" y="65" rx="5">
-                </rect>
-            </svg>
-        </button>
+        
     </body>
 </html>
 
