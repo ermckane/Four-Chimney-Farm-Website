@@ -115,23 +115,26 @@ a {
     border: .2rem solid transparent;
     border-radius: .5rem;
     vertical-align: center;
+    cursor: pointer;
 }
 
 .header-nav-button .line {
     transition: 
-        y 300ms ease-in 300ms,
-        rotate 300ms ease-in,
-        opacity 0ms 300ms;
-    ;
+        y 200ms ease-in 200ms,
+        rotate 200ms ease-in,
+        opacity 0ms 200ms;
     transform-origin: center;
 }
 
 .header-nav-button[aria-expanded='true'] .line {
     transition: 
-        y 300ms ease-in,
-        rotate 300ms ease-in 300ms,
-        opacity 0ms 300ms;
-    ;
+        y 200ms ease-in,
+        rotate 200ms ease-in 200ms,
+        opacity 0ms 200ms;
+}
+
+.header-nav-button :is(.top, .middle, .top) {
+    fill: var(--main-white);
 }
 
 .header-nav-button[aria-expanded='true'] :is(.top, .bottom) {
@@ -152,7 +155,7 @@ a {
 
 #hamburger-nav {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 10rem;
     right: -75rem;
     width: 100%;
@@ -177,30 +180,36 @@ a {
     border-bottom: none;
 }
 
-.header-nav-button[aria-expanded='true'] #hamburger-nav {
-    right: 0;
-}
-
-
- .overlay{
+.overlay {
+    content: '';
+    display: none;
     position: fixed;
     top: 10rem;
-    left: -80rem;
+    left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
+    opacity: 50%;
     transition: opacity .35s, visibility .35s, height .35s;
     overflow: hidden;
     background: black;
     z-index: -1;
 }
 
+#hamburger-nav[aria-expanded='true'] {
+    right: 0;
+}
+
+.overlay[aria-expanded='true'] {
+    display: block;
+    transition: 1s;
+}
 
 #welcome-section {
     display: flex;
     position: static;
     justify-content: center;
     margin: auto;
+    overflow: hidden;
 }
 
 .main-picture {
